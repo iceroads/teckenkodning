@@ -15,14 +15,14 @@ try {
      * I med vår databas är i latin1_swedish_ci vill vi använda latin1
      * i detta fallet.
      */
-    $pdo->exec("SET NAMES latin1");
+    //$pdo->exec("SET NAMES latin1");
 
     /*
      * Genom att tvinga anslutningen till att läsa och skriva i UTF8 kan vi
      * spara text som UTF8 även om databasen är latin1
      */
 
-    //$pdo->exec("SET NAMES utf8");
+    $pdo->exec("SET NAMES utf8");
 } catch (PDOException $e) {
     // Skriv ut felmeddelandet vi får ifall något har gått fel
     echo $e->getMessage();
